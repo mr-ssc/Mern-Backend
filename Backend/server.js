@@ -33,7 +33,4 @@ app.use("/api/users", require("./routes/userRoutes") );
 
 
 
-
-
-const PORT = process.env.PORT || 9999;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;

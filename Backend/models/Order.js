@@ -1,13 +1,19 @@
 const mongoose = require("mongoose");
 
-const OrderSchema = new mongoose.Schema({
-    username: { type: String, required: true },
-    useraddress: { type: String, required: true },
-    productName: { type: String, required: true },
-    productId: { type: String, required: true },
-    quantity: { type: Number, required: true },
-    price: { type: Number, required: true },
-    status: { type: String, default: "Pending" },
+const orderSchema = new mongoose.Schema({
+  username: String,
+  useraddress: String,
+  productName: String,
+  productId: String,
+  quantity: Number,
+  price: Number,
+  image: String,
+  status: {
+    type: String,
+    enum: ["pending", "processing", "shipped", "delivered", "cancelled"],
+    default: "pending",
+  },
+  userId: String, // Firebase UID
 }, { timestamps: true });
 
-module.exports = mongoose.model("Order", OrderSchema);
+module.exports = mongoose.model("Order", orderSchema);

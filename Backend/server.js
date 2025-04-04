@@ -24,13 +24,24 @@ app.use("/api/category", require("./routes/categoryRoutes"));
 app.use("/api/subcategory", require("./routes/subCategoryRoutes"));
 app.use("/api/product", require("./routes/productRoutes"));
 app.use("/api/users", require("./routes/userRoutes") );
-// app.use("/api/orders", require("./routes/orderRoutes") );
+app.use("/api/orders", require("./routes/orderRoutes") );
 
 
 
 
 
 
+
+
+// devlopment 
+
+// const PORT = process.env.PORT || 9999;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
+
+// Deployment
 
 
 module.exports = app;
